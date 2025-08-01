@@ -24,12 +24,12 @@ class Action(
     var price: BigDecimal? = null,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Journal_entry_id")
+    @JoinColumn(name = "Journal_entry_id", nullable = false)
     var journalEntry: JournalEntry? = null,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "position_id")
-    var position: Position? = null
+    @JoinColumn(name = "security_id", nullable = true)
+    var security: Security? = null
 
 ) : Serializable
 
