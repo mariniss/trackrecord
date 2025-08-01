@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Journal Entry</title>
+</head>
+<body>
+<h1 th:text="${journalEntry.title}"></h1>
+<div>
+    <strong>Id:</strong> <span th:text="${journalEntry.id}"></span>
+</div>
+<div>
+    <strong>Portfolio:</strong> <span th:text="${journalEntry.portfolio.name}"></span>
+</div>
+<div>
+    <strong>Date:</strong> <span th:text="${journalEntry.date}"></span>
+</div>
+<div>
+    <strong>Title:</strong> <span th:text="${journalEntry.title}"></span>
+</div>
+<div>
+    <strong>Content:</strong> <span th:text="${journalEntry.content}"></span>
+</div>
+<a href="/journal">Back to list</a>
+</body>
+</html>

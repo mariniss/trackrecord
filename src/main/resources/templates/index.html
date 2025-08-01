@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Trackrecord</title>
+    <title>Track Record</title>
 </head>
 <body>
-<h1>Users</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user : ${users}">
-        <td th:text="${user.id}"></td>
-        <td th:text="${user.name}"></td>
-    </tr>
-    </tbody>
-</table>
+<h1>Track Record</h1>
+<ul>
+    <li><a href="/portfolio">Portfolios</a></li>
+    <li><a href="/security">Securities</a></li>
+    <li><a href="/cashflow">Cash Flows</a></li>
+    <li><a href="/journal">Journal</a></li>
+    <li><a href="/action">Actions</a></li>
+    <li><a href="/position">Positions</a></li>
+</ul>
 </body>
 </html>

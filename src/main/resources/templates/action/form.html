@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Action Form</title>
+</head>
+<body>
+<h1 th:text="${action.id == null ? 'New Action' : 'Edit Action'}"></h1>
+<form th:action="${action.id == null ? '/action' : '/action/' + action.id}" th:object="${action}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" th:field="*{type}"/>
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" th:field="*{date}"/>
+    </div>
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" th:field="*{quantity}"/>
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" id="price" th:field="*{price}"/>
+    </div>
+    <div>
+        <label for="journalEntry">Journal Entry:</label>
+        <select id="journalEntry" th:field="*{journalEntry}">
+            <option th:each="j : ${journalEntries}" th:value="${j.id}" th:text="${j.title}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="security">Security:</label>
+        <select id="security" th:field="*{security}">
+            <option th:each="s : ${securities}" th:value="${s.id}" th:text="${s.name}"></option>
+        </select>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a href="/action">Back to list</a>
+</body>
+</html>

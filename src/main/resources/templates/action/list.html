@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actions</title>
+</head>
+<body>
+<h1>Actions</h1>
+<a href="/action/new">Create New Action</a>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Date</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Journal Entry</th>
+        <th>Security</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="action : ${actions}">
+        <td th:text="${action.id}"></td>
+        <td th:text="${action.type}"></td>
+        <td th:text="${action.date}"></td>
+        <td th:text="${action.quantity}"></td>
+        <td th:text="${action.price}"></td>
+        <td th:text="${action.journalEntry.title}"></td>
+        <td th:text="${action.security?.name}"></td>
+        <td>
+            <a th:href="@{/action/{id}(id=${action.id})}">View</a>
+            <a th:href="@{/action/{id}/edit(id=${action.id})}">Edit</a>
+            <a th:href="@{/action/{id}/delete(id=${action.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Back home</a>
+</body>
+</html>

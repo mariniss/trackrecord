@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Action</title>
+</head>
+<body>
+<h1 th:text="'Action ' + ${action.id}"></h1>
+<div>
+    <strong>Id:</strong> <span th:text="${action.id}"></span>
+</div>
+<div>
+    <strong>Journal Entry:</strong> <span th:text="${action.journalEntry.name}"></span>
+</div>
+<div>
+    <strong>Type:</strong> <span th:text="${action.type}"></span>
+</div>
+<div>
+    <strong>Date:</strong> <span th:text="${action.date}"></span>
+</div>
+<div>
+    <strong>Quantity:</strong> <span th:text="${action.quantity}"></span>
+</div>
+<div>
+    <strong>Price:</strong> <span th:text="${action.price}"></span>
+</div>
+<div>
+    <strong>Security:</strong> <span th:text="${action.security?.name}"></span>
+</div>
+<a href="/action">Back to list</a>
+</body>
+</html>

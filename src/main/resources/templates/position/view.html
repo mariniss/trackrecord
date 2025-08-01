@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Position</title>
+</head>
+<body>
+<h1 th:text="'Position ' + ${position.id}"></h1>
+<div>
+    <strong>Id:</strong> <span th:text="${position.id}"></span>
+</div>
+<div>
+    <strong>Portfolio:</strong> <span th:text="${position.portfolio.name}"></span>
+</div>
+<div>
+    <strong>Security:</strong> <span th:text="${position.security.name}"></span>
+</div>
+<a href="/position">Back to list</a>
+</body>
+</html>

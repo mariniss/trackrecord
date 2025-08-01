@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Cash Flow</title>
+</head>
+<body>
+<h1 th:text="'Cash Flow ' + ${cashFlow.id}"></h1>
+<div>
+    <strong>Id:</strong> <span th:text="${cashFlow.id}"></span>
+</div>
+<div>
+    <strong>Portfolio:</strong> <span th:text="${cashFlow.portfolio.name}"></span>
+</div>
+<div>
+    <strong>Date:</strong> <span th:text="${cashFlow.date}"></span>
+</div>
+<div>
+    <strong>Amount:</strong> <span th:text="${cashFlow.amount}"></span>
+</div>
+<div>
+    <strong>Type:</strong> <span th:text="${cashFlow.type}"></span>
+</div>
+<a href="/cashflow">Back to list</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Position Form</title>
+</head>
+<body>
+<h1 th:text="${position.id == null ? 'New Position' : 'Edit Position'}"></h1>
+<form th:action="${position.id == null ? '/position' : '/position/' + position.id}" th:object="${position}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label for="portfolio">Portfolio:</label>
+        <select id="portfolio" th:field="*{portfolio}">
+            <option th:each="p : ${portfolios}" th:value="${p.id}" th:text="${p.name}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="security">Security:</label>
+        <select id="security" th:field="*{security}">
+            <option th:each="s : ${securities}" th:value="${s.id}" th:text="${s.name}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" th:field="*{quantity}"/>
+    </div>
+    <div>
+        <label for="costBasis">Cost Basis:</label>
+        <input type="text" id="costBasis" th:field="*{costBasis}"/>
+    </div>
+    <div>
+        <label for="openDate">Open Date:</label>
+        <input type="date" id="openDate" th:field="*{openDate}"/>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a href="/position">Back to list</a>
+</body>
+</html>

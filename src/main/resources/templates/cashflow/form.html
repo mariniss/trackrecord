@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cash Flow Form</title>
+</head>
+<body>
+<h1 th:text="${cashFlow.id == null ? 'New Cash Flow' : 'Edit Cash Flow'}"></h1>
+<form th:action="${cashFlow.id == null ? '/cashflow' : '/cashflow/' + cashFlow.id}" th:object="${cashFlow}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label for="portfolio">Portfolio:</label>
+        <select id="portfolio" th:field="*{portfolio}">
+            <option th:each="p : ${portfolios}" th:value="${p.id}" th:text="${p.name}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" th:field="*{date}"/>
+    </div>
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" th:field="*{amount}"/>
+    </div>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" th:field="*{type}"/>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a href="/cashflow">Back to list</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cash Flows</title>
+</head>
+<body>
+<h1>Cash Flows</h1>
+<a href="/cashflow/new">Create New Cash Flow</a>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Portfolio</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cashFlow : ${cashFlows}">
+        <td th:text="${cashFlow.id}"></td>
+        <td th:text="${cashFlow.portfolio.name}"></td>
+        <td th:text="${cashFlow.date}"></td>
+        <td th:text="${cashFlow.amount}"></td>
+        <td th:text="${cashFlow.type}"></td>
+        <td>
+            <a th:href="@{/cashflow/{id}(id=${cashFlow.id})}">View</a>
+            <a th:href="@{/cashflow/{id}/edit(id=${cashFlow.id})}">Edit</a>
+            <a th:href="@{/cashflow/{id}/delete(id=${cashFlow.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Back home</a>
+</body>
+</html>

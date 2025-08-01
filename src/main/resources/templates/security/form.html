@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Form</title>
+</head>
+<body>
+<h1 th:text="${security.id == null ? 'New Security' : 'Edit Security'}"></h1>
+<form th:action="${security.id == null ? '/security' : '/security/' + security.id}" th:object="${security}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label for="ticker">Ticker:</label>
+        <input type="text" id="ticker" th:field="*{ticker}"/>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}"/>
+    </div>
+    <div>
+        <label for="currency">Currency:</label>
+        <input type="text" id="currency" th:field="*{currency}"/>
+    </div>
+    <div>
+        <label for="currentPrice">Current Price:</label>
+        <input type="text" id="currentPrice" th:field="*{currentPrice}"/>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a href="/security">Back to list</a>
+</body>
+</html>

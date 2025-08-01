@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Form</title>
+</head>
+<body>
+<h1 th:text="${portfolio.id == null ? 'New Portfolio' : 'Edit Portfolio'}"></h1>
+<form th:action="${portfolio.id == null ? '/portfolio' : '/portfolio/' + portfolio.id}" th:object="${portfolio}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}"/>
+    </div>
+    <div>
+        <label for="currency">Currency:</label>
+        <input type="text" id="currency" th:field="*{currency}"/>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a href="/portfolio">Back to list</a>
+</body>
+</html>

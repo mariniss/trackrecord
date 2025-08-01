@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Security</title>
+</head>
+<body>
+<h1 th:text="${security.name}"></h1>
+<div>
+    <strong>Id:</strong> <span th:text="${security.id}"></span>
+</div>
+<div>
+    <strong>Ticker:</strong> <span th:text="${security.ticker}"></span>
+</div>
+<div>
+    <strong>Name:</strong> <span th:text="${security.name}"></span>
+</div>
+<div>
+    <strong>Currency:</strong> <span th:text="${security.currency}"></span>
+</div>
+<div>
+    <strong>Current Price:</strong> <span th:text="${security.currentPrice}"></span>
+</div>
+<a href="/security">Back to list</a>
+</body>
+</html>

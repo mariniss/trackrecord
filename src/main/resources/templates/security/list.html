@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Securities</title>
+</head>
+<body>
+<h1>Securities</h1>
+<a href="/security/new">Create New Security</a>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Ticker</th>
+        <th>Name</th>
+        <th>Currency</th>
+        <th>Current price</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="security : ${securities}">
+        <td th:text="${security.id}"></td>
+        <td th:text="${security.ticker}"></td>
+        <td th:text="${security.name}"></td>
+        <td th:text="${security.currency}"></td>
+        <td th:text="${security.currentPrice}"></td>
+        <td>
+            <a th:href="@{/security/{id}(id=${security.id})}">View</a>
+            <a th:href="@{/security/{id}/edit(id=${security.id})}">Edit</a>
+            <a th:href="@{/security/{id}/delete(id=${security.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Back Home</a>
+</body>
+</html>

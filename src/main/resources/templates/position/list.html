@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Positions</title>
+</head>
+<body>
+<h1>Positions</h1>
+<a href="/position/new">Create New Position</a>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Portfolio</th>
+        <th>Security</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="position : ${positions}">
+        <td th:text="${position.id}"></td>
+        <td th:text="${position.portfolio.name}"></td>
+        <td th:text="${position.security.name}"></td>
+        <td>
+            <a th:href="@{/position/{id}(id=${position.id})}">View</a>
+            <a th:href="@{/position/{id}/edit(id=${position.id})}">Edit</a>
+            <a th:href="@{/position/{id}/delete(id=${position.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/">Back home</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Portfolio</title>
+</head>
+<body>
+<h1 th:text="${portfolio.name}"></h1>
+<div>
+    <strong>Id:</strong> <span th:text="${portfolio.id}"></span>
+</div>
+<div>
+    <strong>Name:</strong> <span th:text="${portfolio.name}"></span>
+</div>
+<div>
+    <strong>Currency:</strong> <span th:text="${portfolio.currency}"></span>
+</div>
+<a href="/portfolio">Back to list</a>
+</body>
+</html>
