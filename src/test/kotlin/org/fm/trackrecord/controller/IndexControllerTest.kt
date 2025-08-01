@@ -11,8 +11,8 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 
-@WebMvcTest(HtmlController::class)
-class HtmlControllerTest(@Autowired val mockMvc: MockMvc) {
+@WebMvcTest(IndexController::class)
+class IndexControllerTest(@Autowired val mockMvc: MockMvc) {
 
     @MockBean
     private lateinit var portfolioService: PortfolioService

@@ -6,10 +6,10 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class HtmlController(private val portfolioService: PortfolioService) {
+class IndexController(private val portfolioService: PortfolioService) {
 
     @GetMapping("/")
-    fun blog(model: Model): String {
+    fun index(model: Model): String {
         model.addAttribute("portfolios", portfolioService.findAll())
         return "index"
     }
