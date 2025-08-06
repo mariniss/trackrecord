@@ -1,0 +1,111 @@
+body {
+    font-family: sans-serif;
+}
+
+.dashboard-page, .journal-page, .add-journal-entry-page {
+    display: flex;
+}
+.sidebar {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar a:last-child {
+    margin-top: auto;
+}
+.sidebar a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+.main-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+.header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+.positions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.positions th, .positions td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.summary-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.summary-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+}
+.journal-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.journal-table th, .journal-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.add-entry-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.index-page .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.index-page .grid-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.index-page .grid-item a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="dashboard-page">
+<div class="sidebar">
+    <a th:href="@{/{portfolioId}/dashboard(portfolioId=${portfolio.id})}">Dashboard</a>
+    <a href="#">Positions</a>
+    <a href="#">Inflows/Outflows</a>
+    <a th:href="@{/{portfolioId}/journal(portfolioId=${portfolio.id})}">Journal</a>
+    <a href="#">Performance</a>
+    <a th:href="@{'/'}">Back to portfolios</a>
+</div>
+<div class="main-content">
+    <div class="header">
+        <h1 th:text="${portfolio.name}">Portfolio Dashboard</h1>
+    </div>
+    <div class="grid-container">
+        <div class="positions">
+            <h2>Current Positions</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Qty</th>
+                    <th>Avg Price</th>
+                    <th>Market Price</th>
+                    <th>P/L</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Position data will go here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="performance">
+            <h2>Performance</h2>
+            <!-- Chart will go here -->
+        </div>
+    </div>
+    <div class="summary-boxes">
+        <div class="summary-box">
+            <h3>Total Value</h3>
+            <p>$120,000</p>
+        </div>
+        <div class="summary-box">
+            <h3>Total Return</h3>
+            <p>+8%</p>
+        </div>
+        <div class="summary-box">
+            <h3>Cash Balance</h3>
+            <p>$5,000</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

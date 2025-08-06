@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="journal-page">
+<div class="sidebar">
+    <a th:href="@{/{portfolioId}/dashboard(portfolioId=${portfolioId})}">Dashboard</a>
+    <a href="#">Positions</a>
+    <a href="#">Inflows/Outflows</a>
+    <a th:href="@{/{portfolioId}/journal(portfolioId=${portfolioId})}">Journal</a>
+    <a href="#">Performance</a>
+    <a th:href="@{'/'}">Back to portfolios</a>
+</div>
+<div class="main-content">
+    <div class="header">
+        <h1>Journal</h1>
+    </div>
+    <div class="journal-table">
+        <h2>Journal Entries</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Related Action</th>
+                <th>Title</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="entry : ${journalEntries}">
+                <td th:text="${entry.entryDate}"></td>
+                <td></td> <!-- Related Action -->
+                <td th:text="${entry.title}"></td>
+                <td th:text="${entry.content}"></td>
+                <td></td> <!-- Actions -->
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/{portfolioId}/journal/add(portfolioId=${portfolioId})}" class="add-entry-button">+ Add Entry</a>
+    </div>
+</div>
+</body>
+</html>

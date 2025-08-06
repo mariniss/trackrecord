@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Track Record</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body>
+<body class="index-page">
 <h1>Track Record</h1>
+<div class="grid-container">
+    <div th:each="portfolio : ${portfolios}" class="grid-item">
+        <a th:href="@{{portfolioId}/dashboard(portfolioId=${portfolio.id})}">
+            <h2 th:text="${portfolio.name}">Portfolio Name</h2>
+            <p th:text="${portfolio.currency}">Currency</p>
+        </a>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Journal Entry</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="add-journal-entry-page">
+<div class="sidebar">
+    <a th:href="@{/{portfolioId}/dashboard(portfolioId=${portfolioId})}">Dashboard</a>
+    <a href="#">Positions</a>
+    <a href="#">Inflows/Outflows</a>
+    <a th:href="@{/{portfolioId}/journal(portfolioId=${portfolioId})}">Journal</a>
+    <a href="#">Performance</a>
+    <a th:href="@{'/'}">Back to portfolios</a>
+</div>
+<div class="main-content">
+    <div class="header">
+        <h1>Add Journal Entry</h1>
+    </div>
+    <form th:action="@{/{portfolioId}/journal/add(portfolioId=${portfolioId})}" th:object="${journalEntry}" method="post">
+        <div class="form-group">
+            <label for="entryDate">Date</label>
+            <input type="date" id="entryDate" th:field="*{entryDate}" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" th:field="*{title}" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Notes</label>
+            <textarea id="content" th:field="*{content}" rows="5"></textarea>
+        </div>
+        <button type="submit" class="submit-button">Add Entry</button>
+    </form>
+</div>
+</body>
+</html>
